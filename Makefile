@@ -6,11 +6,11 @@
 #    By: aimokhta <aimokhta@student.42kl.edu.my>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/06 14:26:57 by aimokhta          #+#    #+#              #
-#    Updated: 2025/03/13 15:09:14 by aimokhta         ###   ########.fr        #
+#    Updated: 2025/03/27 17:17:39 by aimokhta         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = cc -g3 -O0 -fsanitize=address -fsanitize-recover=leak
+CC = cc #-g3 -O0 -fsanitize=address -fsanitize-recover=leak
 CFLAGS = -Wall -Wextra -Werror -I include -I libft -I ft_printf -g3
 
 SRC_DIR = srcs
@@ -81,7 +81,7 @@ $(NAME): $(PUSH_SWAP_OBJ_PATHS) $(LIBFT) $(FT_PRINTF)
 	$(CC) $(CFLAGS) -o $(NAME) $(PUSH_SWAP_OBJ_PATHS) $(LIBFT) $(FT_PRINTF)
 	@echo "$(GREEN)----------COMPILED PUSH_SWAP DONE---------\n$(WHITE)"
 
-checker : $(CHECKER_NAME)
+bonus : $(CHECKER_NAME)
 
 $(CHECKER_NAME) : $(CHECKER_OBJ_PATHS) $(CHECKER_EXTRA_OBJ_PATHS) $(LIBFT) $(FT_PRINTF)
 	$(CC) $(CFLAGS) -o $(CHECKER_NAME) $(CHECKER_OBJ_PATHS) $(CHECKER_EXTRA_OBJ_PATHS) $(LIBFT) $(FT_PRINTF)
@@ -100,7 +100,7 @@ $(BUILD_DIR):
 	mkdir -p $(BUILD_DIR)
 
 clean:
-	rm -f $(BUILD_DIR)/*.o
+	rm -rf $(BUILD_DIR)
 	@make -C $(LIBFT_DIR) clean
 	@make -C $(FT_PRINTF_DIR) clean
 
@@ -112,4 +112,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re checkers
+.PHONY: all clean fclean re bonus

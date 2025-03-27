@@ -6,7 +6,7 @@
 /*   By: aimokhta <aimokhta@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 12:50:36 by aimokhta          #+#    #+#             */
-/*   Updated: 2025/03/13 16:16:50 by aimokhta         ###   ########.fr       */
+/*   Updated: 2025/03/14 09:59:16 by aimokhta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,11 @@
 // I../include in Makefile for this header
 #include "push_swap.h"
 
+// return 1 in int main instead of exit(1)
+// quite equivalent but subtle differences :
+// 	return 1 = readable, proper cleanup of local objects in main, graceful exit
+// 	exit 1 = still reachable leaks, forceful and abrupt: 
+// 				used only in non main functions or exceptional cases
 int	main(int ac, char **av)
 {
 	t_stack	*stack_a;

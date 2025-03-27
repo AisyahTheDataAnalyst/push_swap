@@ -6,7 +6,7 @@
 /*   By: aimokhta <aimokhta@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 17:35:33 by aimokhta          #+#    #+#             */
-/*   Updated: 2025/03/12 11:46:28 by aimokhta         ###   ########.fr       */
+/*   Updated: 2025/03/14 12:50:16 by aimokhta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,13 @@ void	steps_calc(t_stack *stack_a, t_stack *stack_b)
 	}
 }
 
-// purpose : searching for target node b to push a on top of it. 
+// purpose : searching for target node b to push a on top of it.
+// target node b = closest smaller than a  
 // compare either extreme situations: num > max or num < min
-// compare if num is in between:  node > num > node->next
+// compare if num is in between:  node > num > node_b->next
 t_node	*set_target_b(long num, t_stack *stack_b)
 {
-	t_node	*node;
+	t_node	*node_b;
 	t_node	*max;
 	t_node	*min;
 
@@ -51,17 +52,17 @@ t_node	*set_target_b(long num, t_stack *stack_b)
 		return (NULL);
 	max = find_biggest_node(stack_b);
 	min = find_smallest_node(stack_b);
-	node = stack_b->top;
+	node_b = stack_b->top;
 	if (num > max->num)
 		return (max);
 	if (num < min->num)
 		return (min->next);
 	while (1)
 	{
-		if (num < node->num && num > node->next->num)
-			return (node->next);
-		node = node->next;
-		if (node == stack_b->top)
+		if (num < node_b->num && num > node_b->next->num)
+			return (node_b->next);
+		node_b = node_b->next;
+		if (node_b == stack_b->top)
 			break ;
 	}
 	return (max);

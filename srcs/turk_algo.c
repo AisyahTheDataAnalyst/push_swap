@@ -6,7 +6,7 @@
 /*   By: aimokhta <aimokhta@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 10:53:37 by aimokhta          #+#    #+#             */
-/*   Updated: 2025/03/13 14:25:03 by aimokhta         ###   ########.fr       */
+/*   Updated: 2025/03/14 12:54:23 by aimokhta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,11 @@
 
 // aisyah you can do this
 // just randomly push 2 nodes , so theres min and max of stack_b
-// while pushing a to b, in every loop
+// before pushing a to b, in every loop
 // 		- node->index : check index each node of both a & b
 //		- node->above_median : check median for each node of both a & b
 //		- node->b_node : check which b node is the target for a node
 //		- node->steps : check how many steps of a to target node b
-//		- node->
 void	turk_algo(t_stack *stack_a, t_stack *stack_b)
 {
 	int	size_a;

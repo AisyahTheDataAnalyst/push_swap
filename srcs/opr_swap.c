@@ -6,7 +6,7 @@
 /*   By: aimokhta <aimokhta@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 13:13:40 by aimokhta          #+#    #+#             */
-/*   Updated: 2025/03/13 13:45:55 by aimokhta         ###   ########.fr       */
+/*   Updated: 2025/03/18 18:15:20 by aimokhta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ void	swap(t_stack *stack)
 	if (stack->size == 2)
 	{
 		stack->top = second_node;
+		first_node = second_node->next;
 		return ;
 	}
 	first_node->next = second_node->next;

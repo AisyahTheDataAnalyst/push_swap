@@ -6,12 +6,16 @@
 /*   By: aimokhta <aimokhta@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 13:28:38 by aimokhta          #+#    #+#             */
-/*   Updated: 2025/03/13 17:56:00 by aimokhta         ###   ########.fr       */
+/*   Updated: 2025/03/14 12:24:22 by aimokhta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+// purpose : parsing input 
+// = process of reading, validating, and preparing the input data 
+//   (a list of numbers) so that it can be used by the program
+// 3 sections = recieving input, transform to long&linked list, error-handling
 void	process_input(int ac, char **av, t_stack *stack_a)
 {
 	char	**split;
@@ -29,7 +33,7 @@ void	process_input(int ac, char **av, t_stack *stack_a)
 		free_cdllist(stack_a);
 		error_exit2("Error");
 	}
-	if (stack_a->size == 1 || is_sorted(stack_a))
+	if (stack_a->size == 1 || is_sorted(stack_a) == true)
 	{
 		free_cdllist(stack_a);
 		exit(0);

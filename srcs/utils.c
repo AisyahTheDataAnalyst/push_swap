@@ -12,6 +12,9 @@
 
 #include "push_swap.h"
 
+// double pointer for malloc
+// modifying the heap pointer
+// aliasing - can be used by both stack_a and stack_b for stack
 void	init_stack(t_stack **stack)
 {
 	*stack = malloc(sizeof(t_stack));

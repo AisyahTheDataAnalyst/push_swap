@@ -6,12 +6,15 @@
 /*   By: aimokhta <aimokhta@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 11:03:23 by aimokhta          #+#    #+#             */
-/*   Updated: 2025/03/11 15:46:34 by aimokhta         ###   ########.fr       */
+/*   Updated: 2025/03/14 11:06:38 by aimokhta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+// purpose : transform type of data and type of data structure 
+// data - from str to long
+// data structure - from array to cdllist
 void	input_into_cdllist(char **split, t_stack *stack_a)
 {
 	long	nbr;
